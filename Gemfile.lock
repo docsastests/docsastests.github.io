@@ -96,6 +96,8 @@ GEM
       google-protobuf (~> 3.25)
     sass-embedded (1.69.6-x86-mingw32)
       google-protobuf (~> 3.25)
+    sass-embedded (1.69.6-x86_64-linux-gnu)
+      google-protobuf (~> 3.25)
     sawyer (0.9.2)
       addressable (>= 2.3.5)
       faraday (>= 0.17.3, < 3)
@@ -116,6 +118,7 @@ PLATFORMS
   x86-mingw32
   x86-mswin3
   x86-mswin32
+  x86_64-linux
 
 DEPENDENCIES
   http_parser.rb (~> 0.6.0)
