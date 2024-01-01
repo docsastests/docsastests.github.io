@@ -1,6 +1,9 @@
 mannysilva:
   name: Manny Silva
   links:
+    - title: LinkedIn
+      url: https://www.linkedin.com/in/manuelrbsilva/
+      icon: fab fa-linkedin
     - title: Twitter
       url: https://twitter.com/hawkeyexl
       icon: fab fa-twitter-square
