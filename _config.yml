@@ -84,6 +84,9 @@ collections:
     output: true
     permalink: /:collection/:path/
 
+# Author defaults. Pulled from _data/authors.yml
+author: mannysilva
+
 # Front Matter Defaults
 defaults:
   # Post defaults
@@ -119,4 +122,4 @@ footer_links:
     icon: fas fa-rss-square
 
 # Copyright
-copyright: "© 2023 Manny Silva"
+copyright: "© 2024 Manny Silva"
