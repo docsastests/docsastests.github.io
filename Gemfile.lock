@@ -10,17 +10,14 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    eventmachine (1.2.7-java)
-    eventmachine (1.2.7-x64-mingw32)
-    eventmachine (1.2.7-x86-mingw32)
     faraday (2.8.1)
       base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
-    ffi (1.16.3)
+    ffi (1.16.3-x64-mingw-ucrt)
     forwardable-extended (2.6.0)
-    google-protobuf (3.25.1)
+    google-protobuf (3.25.1-x64-mingw-ucrt)
     http_parser.rb (0.8.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -79,7 +76,6 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (5.0.4)
-    rake (13.1.0)
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -87,16 +83,7 @@ GEM
     rouge (4.2.0)
     ruby2_keywords (0.0.5)
     safe_yaml (1.0.5)
-    sass-embedded (1.69.6)
-      google-protobuf (~> 3.25)
-      rake (>= 13.0.0)
     sass-embedded (1.69.6-x64-mingw-ucrt)
-      google-protobuf (~> 3.25)
-    sass-embedded (1.69.6-x64-mingw32)
-      google-protobuf (~> 3.25)
-    sass-embedded (1.69.6-x86-mingw32)
-      google-protobuf (~> 3.25)
-    sass-embedded (1.69.6-x86_64-linux-gnu)
       google-protobuf (~> 3.25)
     sawyer (0.9.2)
       addressable (>= 2.3.5)
@@ -112,13 +99,7 @@ GEM
     webrick (1.8.1)
 
 PLATFORMS
-  java
   x64-mingw-ucrt
-  x64-mingw32
-  x86-mingw32
-  x86-mswin3
-  x86-mswin32
-  x86_64-linux
 
 DEPENDENCIES
   http_parser.rb (~> 0.6.0)
