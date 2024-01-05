@@ -1,6 +1,8 @@
 - title: Home
   url: /
-- title: blog
+- title: Blog
   url: /blog/
+- title: Tools
+  url: /tools/
 - title: Search
   url: /search/
