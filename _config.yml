@@ -108,12 +108,6 @@ defaults:
 
 # Footer Links
 footer_links:
-  # - title: Twitter
-  #   url: https://twitter.com/mmistakes
-  #   icon: fab fa-twitter-square
-  # - title: Instagram
-  #   url: https://instagram.com/mmistakes
-  #   icon: fab fa-instagram
   - title: Newsletter
     url: http://eepurl.com/iHb1CE
     icon: fas fa-envelope-square
