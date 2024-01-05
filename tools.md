@@ -29,8 +29,8 @@ These tools help you single-source content directly from known-good sources, suc
 
 These tools help you test APIs, which can be useful if you generate a portion of your docs from an API contract, such as an OpenAPI specification.
 
+* [Dredd](https://dredd.org/en/latest/): Dredd is a specialized tool designed for validating API contracts against actual backend implementations. It verifies that APIs behave as expected and conform to their contracts.
 * [Postman](https://www.postman.com/): Postman is a versatile API testing tool that facilitates ensuring the precision and currency of API contracts. It integrates automated tests into continuous integration and delivery workflows to maintain API performance and reliability.
-* [Dredd](https://dredd.org/en/latest/): Dredd is a specialized tool designed for validating API contracts against actual backend implementations. It verifies that APIs behave as expected and conformity to their contracts.
 * [Sauce Labs](https://saucelabs.com/): Sauce Labs provides robust capabilities for browser and API testing, focusing on verifying the accuracy and contemporaneity of API contracts.
 * [SmartBear ReadyAPI](https://smartbear.com/product/ready-api/): SmartBear ReadyAPI validates API contracts for up-to-dateness and accuracy to make sure APIs are dependable and efficient.
 * [Pact](https://pact.io/): Pact specializes in testing both microservices and APIs, aimed at affirming the precision and modernity of API contracts. It is a crucial tool for maintaining seamless interaction and reliability in microservices architecture.
