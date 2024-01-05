@@ -114,6 +114,9 @@ footer_links:
   # - title: Instagram
   #   url: https://instagram.com/mmistakes
   #   icon: fab fa-instagram
+  - title: Newsletter
+    url: http://eepurl.com/iHb1CE
+    icon: fas fa-envelope-square
   - title: GitHub
     url: https://github.com/docsastests
     icon: fab fa-github-square
