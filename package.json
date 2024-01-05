@@ -1,0 +1,23 @@
+{
+  "name": "docsastests.github.io",
+  "version": "1.0.0",
+  "description": "Docs as Tests website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/docsastests/docsastests.github.io.git"
+  },
+  "author": "Manny Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/docsastests/docsastests.github.io/issues"
+  },
+  "homepage": "https://github.com/docsastests/docsastests.github.io#readme",
+  "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "xml2js": "^0.6.2"
+  }
+}
