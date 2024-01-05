@@ -15,7 +15,7 @@ These tools actively run tests and validate assertions made in those tests.
 * [Cypress](https://www.cypress.io/): An engineering-focused web automation and component testing tool that can also be used to ensure that docs correctly guide users through interfaces.
 * [Playwright](https://playwright.dev/): An engineering-focused web automation tool that can also be used to ensure that docs correctly guide users through interfaces.
 * [Selenium](https://www.selenium.dev/): An engineering-focused web automation tool that can also be used to ensure that docs correctly guide users through interfaces.
-* [Codebraid](https://codebraid.org/): A tool specifically designed for executing code snippets in docs and ensuring that the outputs are as expected. It's useful for docs involving tutorials or extensive code examples.
+* [Codebraid](https://codebraid.org/): A tool to execute code snippets in docs and ensure that the outputs are as expected. It's useful for docs involving tutorials or extensive code examples.
 
 ## Single-sourcing
 
