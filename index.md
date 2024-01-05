@@ -4,7 +4,7 @@
 
 layout: home
 paginate: false
-entries_layout: grid
+# entries_layout: grid
 ---
 
 Construction in progress. If you're here early, congrats! Try again later.
