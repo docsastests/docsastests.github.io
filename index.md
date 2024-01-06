@@ -11,7 +11,7 @@ title: Never have stale docs again
 Docs as Tests is a strategy that keeps your docs in sync with your product. It's a way to test your docs, just like engineers test their code. It's a way to make sure that your docs are always accurate, complete, and relevant.
 
 - Validate that your guides, tutorials, API references, and other docs work as written.
-- Catch issues in your docs and product--before your users do.
+- Catch issues in your docs and product---before your users do.
 - Reduce the time and effort required to maintain your docs.
 - Build user trust by ensuring a consistent user experience between your docs and product.
 - Make docs a first-class citizen in your engineering and product development processes.
