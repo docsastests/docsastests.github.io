@@ -31,10 +31,12 @@ mathjax:
 #  tags: "none"
 google_fonts:
   - name: "Source Sans Pro"
-    weights: "400,400i,700,700i"
+    weights: "400,400i,500,500i,600,600i,700,700i"
   - name: "Lora"
-    weights: "400,400i,700,700i"
-google_analytics: "G-C00LXC320E" # Google Analytics id, e.g. "UA-NNNNNNNN-N"
+    weights: "400,400i,500,500i,600,600i,700,700i"
+  - name: "Roboto Slab"
+    weights: "400,400i,500,500i,600,600i,700,700i"
+# google_analytics: "" # Google Analytics id, e.g. "UA-NNNNNNNN-N"
 disqus:
   shortname: "docs-as-tests" # Disqus shortname, e.g. "my_disqus_shortname"
 # twitter:

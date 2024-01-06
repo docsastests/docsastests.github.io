@@ -1,0 +1,12 @@
+.masthead {
+    margin-bottom: 1em;
+}
+.site-title, .page-title, .entry-title, h1 {
+    font-family: "Roboto Slab", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+.site-description {
+    font-family: "Roboto Slab", sans-serif;
+    font-style: normal;
+}
