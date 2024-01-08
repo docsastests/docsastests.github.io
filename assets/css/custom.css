@@ -6,6 +6,10 @@ h1, h2, h3, h4, h5, h6, .site-title, .page-title, .entry-title, h1 {
     font-style: normal;
     font-weight: 400;
 }
+.page-title {
+    text-align: center;
+    font-size: 2.5em;
+}
 .site-description {
     font-family: "Roboto Slab", sans-serif;
     font-style: normal;
