@@ -1,6 +1,7 @@
 mannysilva:
   name: Manny Silva
   picture: /images/mannysilva.jpg
+  bio: "Technical writer by day and engineer by night, Manny Silva is Head of Documentation at Skyflow, the creator of Docs as Tests, and the creator of Doc Detective. He's passionate about intuitive and scalable developer experiences and likes diving into the deep end as the 0th developer."
   links:
     - title: LinkedIn
       url: https://www.linkedin.com/in/manuelrbsilva/
