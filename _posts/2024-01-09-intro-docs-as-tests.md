@@ -1,8 +1,8 @@
 ---
 layout: post
-# image:
-#   path: /images/post-image-lg.jpg
-#   thumbnail: /images/post-image-th.jpg
+image:
+  path: /images/shield.png
+  thumbnail: /images/shield.png
 #   caption: "Photo credit [Unsplash](https://unsplash.com/)"
 title: "Docs as Tests: A strategy for resilient docs"
 categories: docs-as-tests concept
