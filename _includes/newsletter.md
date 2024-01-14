@@ -1,0 +1,1 @@
+Thanks for reading. If you like what you read here, [sign up for the newsletter](http://eepurl.com/iHb1CE) to stay up to date on Docs as Tests discussions, share this article with those you think would appreciate it, or sound off in the comments below.
