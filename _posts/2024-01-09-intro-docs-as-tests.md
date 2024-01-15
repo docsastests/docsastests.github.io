@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /docs-as-tests/concept/2024/01/09/intro-docs-as-tests.html
 image:
   path: /images/shield.png
   thumbnail: /images/shield.png

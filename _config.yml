@@ -21,6 +21,7 @@ title: "Docs as Tests"
 description: "Keep your docs and product in sync."
 baseurl: "" # the subpath of your site, e.g. "/blog"
 url: "https://www.docsastests.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+permalink: /:title # the default permalink structure used when creating new posts & pages
 logo: "/images/docsastests.png" # path of site logo, e.g. "/assets/images/logo.png"
 image: "/images/cover.png" # default meta image, e.g. "/assets/images/cover.jpg"
 date_format: "%B %-d, %Y"
