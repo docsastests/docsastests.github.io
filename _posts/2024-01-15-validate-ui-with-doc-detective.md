@@ -1,7 +1,10 @@
 ---
 layout: post
-image: /images/validate-ui-doc-detective-banner.png
+image: 
+  path: /images/validate-ui-doc-detective-banner.png
+  thumbnail: /images/validate-ui-doc-detective-banner.png
 title: "Validate a UI with Doc Detective"
+date: 2024-01-13 00:00:00 -0000
 categories: tutorial doc-detective
 ---
 
