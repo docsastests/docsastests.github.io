@@ -157,7 +157,9 @@ npm run runTests -- -i <input_path>
 
 Doc Detective spins up a headless browser (meaning you won't see a window), and performs the test. You'll see a JSON report in your terminal when it's done, as well as the report in a new JSON file starting with _testResults-_.
 
-Unless Google's down, your steps, test, and test spec should have all passed! Also, you should see a new _search-results.png_ file, which is the screenshot we automatically captured. With the new screenshot, _kitten-search.md_ now renders like this:
+If a step in your test failed, you'd see a failure message in the step's `resultDescription` field. This is a great way to debug your test runs and figure out what went wrong, which is the first step toward updating your docs or fixing your product.
+
+But unless Google's down, your steps, test, and test spec should have all passed! Also, you should see a new _search-results.png_ file, which is the screenshot we automatically captured. With the new screenshot, _kitten-search.md_ now renders like this:
 
 ![Rendered preview of kitten-search.md with screenshot](/images/validate-ui-doc-detective-after.png)
 
