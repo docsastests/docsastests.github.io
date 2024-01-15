@@ -16,7 +16,7 @@ Today, I'll show you how to validate a UI-based procedure with Doc Detective—a
 
 ## The setup
 
-For this tutorial, assume you have a simple procedure about searching for American Shorthair kitten pictures:
+For this tutorial, assume you have a simple procedure about searching for American Shorthair kittens:
 
 ```markdown
 To search for American Shorthair kittens,
