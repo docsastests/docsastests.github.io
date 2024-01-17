@@ -32,23 +32,37 @@ async function sendEmailUpdate(entry) {
       type: "regular",
       recipients: { list_id: mailchimpListId },
       settings: {
-        subject_line: `Docs as Tests - ${entry.title[0]._}`,
+        subject_line: `New Docs as Tests post: ${entry.title[0]._}`,
         title: `New Docs as Tests post: ${entry.title[0]._}`,
         from_name: "Docs as Tests",
-        reply_to: "hawkeyexl@gmail.com",
+        reply_to: "no-reply@docsastests.com",
         auto_footer: true,
+      },
+      tracking: {
+        opens: true,
+        html_clicks: true,
+        text_clicks: true,
       },
     };
 
     const style = `<style>
-    body {
-        font-family: "Source Sans Pro", Roboto, Arial, Helvetica, sans-serif;
+    .container {
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
     }
     h2, h3, h4, h5, h6, p, pre, blockquote, dl, table, address {
         margin-top: 0px;
         margin-bottom: 1.5rem;
     }
-    h2 {
+    h1 {
         display: block;
         font-size: 1.7em;
         margin-block-start: 0.83em;
@@ -108,8 +122,16 @@ async function sendEmailUpdate(entry) {
     code > span {
         line-height: 1.5;
     }
+    .header, .header p {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .header img {
+      max-width: 150px;
+    }
     </style>`;
-    
+
     // Get entry content from beginning until the first <h1> or <h2> tag
     text = entry.content[0]._;
     let index = text.indexOf("<h1");
@@ -121,12 +143,18 @@ async function sendEmailUpdate(entry) {
     const html = `
     <head>${style}</head>
     <body>
-        <p><i>You received this email because you subscribed to updates from <a href="https://www.docsastests.com">Docs as Tests</a>.</i></p>
+      <div class="container">
+        <div class="header">
+          <img src="https://www.docsastests.com/images/docsastests.png" alt="Docs as Tests logo" />
+          <h1 class="title">Docs as Tests</h1>
+          <p><i>You received this email because you subscribed to updates from <a href="https://www.docsastests.com">Docs as Tests</a>.</i></p>
+        </div>
         <h1>${entry.title[0]._}</h1>
         <p>By ${entry.author[0].name[0]}</p>
         ${lead}
         <p><i><a href="${entry.link[0].$.href}">Keep reading on the blog</a>.</i></p>
-    </body>`
+      </div>
+    </body>`;
     const content = { html: html };
 
     // Create a campaign
@@ -173,7 +201,8 @@ async function main() {
 
     // Get all entries that have a date greater than lastPublishedEntry
     const newEntries = entries.filter(
-      (entry) => new Date(entry.published[0]) > new Date(lastPublishedEntry.published[0])
+      (entry) =>
+        new Date(entry.published[0]) > new Date(lastPublishedEntry.published[0])
     );
 
     // Get the oldest new entry
