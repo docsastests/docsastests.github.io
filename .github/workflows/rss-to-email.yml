@@ -1,0 +1,31 @@
+name: RSS to Email
+
+on:
+  schedule:
+    - cron: '0 18 * * *'  # This line means every day at 10am PST.
+  workflow_dispatch:
+
+jobs:
+  sendEmail:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Send Email Update
+        env:
+          MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
+          MAILCHIMP_LIST_ID: ${{ secrets.MAILCHIMP_LIST_ID }}
+        run: node _scripts/rss-to-email.js
+
+      - name: Commit last published update
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update latest emailed post"
+          commit_options: "--no-verify --signoff"
