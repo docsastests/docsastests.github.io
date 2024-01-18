@@ -44,6 +44,7 @@ async function sendEmailUpdate(entry) {
         text_clicks: true,
       },
     };
+    console.log("Campaign defined.");
 
     const style = `<style>
     .container {
@@ -156,6 +157,7 @@ async function sendEmailUpdate(entry) {
       </div>
     </body>`;
     const content = { html: html };
+    console.log({ content });
 
     // Create a campaign
     const createdCampaign = await mailchimp.campaigns.create(campaign);
@@ -187,6 +189,7 @@ async function main() {
     });
     // Get last published entry
     const lastPublishedId = await getLastPublished();
+    console.log({ lastPublishedId });
 
     // If the last published entry is the same as the latest entry, do nothing
     if (lastPublishedId === entries[0].id[0]) {
@@ -198,18 +201,22 @@ async function main() {
     const lastPublishedEntry = entries.find(
       (entry) => entry.id[0] === lastPublishedId
     );
+    console.log({ lastPublishedEntry });
 
     // Get all entries that have a date greater than lastPublishedEntry
     const newEntries = entries.filter(
       (entry) =>
         new Date(entry.published[0]) > new Date(lastPublishedEntry.published[0])
     );
+    console.log({ newEntries });
 
     // Get the oldest new entry
     const entry = newEntries[newEntries.length - 1];
+    console.log({ entry });
 
     // Write the ID of the oldest entry to a file
-    // ! fs.writeFileSync("./_scripts/last-published.txt", entry.id[0]);
+    fs.writeFileSync("./_scripts/last-published.txt", entry.id[0]);
+    console.log("Updated last-published.txt");
 
     // Send email with the latest update
     await sendEmailUpdate(entry);
