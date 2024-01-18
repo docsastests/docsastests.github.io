@@ -46,6 +46,3 @@ jobs:
         with:
           commit_message: "Update latest emailed post"
           commit_options: "--no-verify --signoff"
-          commit_user_name: "hawkeyexl"
-          commit_user_email: "hawkeyexl@gmail.com"
-          commit_author: "hawkeyexl"
