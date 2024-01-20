@@ -1,1 +1,1 @@
-https://www.docsastests.com/docs-as-tests/concept/2024/01/09/intro-docs-as-tests
+https://www.docsastests.com/validate-ui-with-doc-detective
