@@ -175,10 +175,10 @@ Doc Detective can interact with product UIs and APIs through a host of actions:
 * [httpRequest](https://doc-detective.com/reference/schemas/httpRequest.html): Perform a generic HTTP request, for example to an API.
 * [runShell](https://doc-detective.com/reference/schemas/runShell.html): Perform a native shell command, such as running a script.
 * [saveScreenshot](https://doc-detective.com/reference/schemas/saveScreenshot.html): Take a screenshot in PNG format, including performing pixel diff comparisons between screenshots to monitor for visual changes.
+* [startRecording](https://doc-detective.com/reference/schemas/startRecording.html) and [stopRecording](https://doc-detective.com/reference/schemas/stopRecording.html): Capture a recording of steps during the test. Supports `.webm`, `.mp4`, and `.gif` formats.
 * [setVariables](https://doc-detective.com/reference/schemas/setVariables.html): Load environment variables from a _.env_ file.
 * [typeKeys](https://doc-detective.com/reference/schemas/typeKeys.html): Type strings or special keys.
 * [wait](https://doc-detective.com/reference/schemas/wait.html): Pause before performing the next action.
-* **(Coming soon!)** startRecording and stopRecording: Capture a recording of steps during the test. Supports `.webm`, `.mp4`, and `.gif` formats.
 
 With these actions, you can replicate and validate most UX flows described in your docs, programmatically capture images (and soon video) to supplement your text, and even run scripts to validate functionality that Doc Detective can't cover on its own.
 
