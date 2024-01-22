@@ -35,7 +35,7 @@ async function sendEmailUpdate(entry) {
         subject_line: `New post: ${entry.title[0]._}`,
         title: `New post: ${entry.title[0]._}`,
         from_name: "Docs as Tests",
-        reply_to: "no-reply@docsastests.com",
+        reply_to: "manuel.r.b.silva+no-reply@gmail.com",
         auto_footer: true,
       },
       tracking: {
@@ -138,16 +138,19 @@ async function sendEmailUpdate(entry) {
     </style>`;
 
     // Update all links to include UTM parameters
-    const text = entry.content[0]._.replace(
+    let text = entry.content[0]._.replace(
       /href="([^"]*)"/g,
       'href="$1?utm_source=email&utm_medium=email&utm_campaign=dat_newsletter&utm_content=body-link"'
     );
     // Update all images without domains to include full URL
     text = text.replace(
-      /src="([^"]*)"/g,
+      /src="(\/images[^"]*)"/g,
       'src="https://www.docsastests.com$1"'
     );
-
+    // Remove all content from the final <hr> to the end of the string
+    const hrIndex = text.lastIndexOf("<hr");
+    text = text.slice(0, hrIndex - 1);
+    
     const html = `
     <head>${style}</head>
     <body>
@@ -163,7 +166,6 @@ async function sendEmailUpdate(entry) {
       </div>
     </body>`;
     const content = { html: html };
-    console.log({ content });
 
     // Create a campaign
     const createdCampaign = await mailchimp.campaigns.create(campaign);
