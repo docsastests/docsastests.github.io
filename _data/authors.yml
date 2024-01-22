@@ -12,3 +12,11 @@ mannysilva:
     - title: GitHub
       url: https://github.com/hawkeyexl
       icon: fab fa-github-square
+
+nikoberry:
+  name: Niko Berry
+  bio: "Helping companies build better experiences."
+  links:
+    - title: LinkedIn
+      url: https://www.linkedin.com/in/niko-berry/
+      icon: fab fa-linkedin
