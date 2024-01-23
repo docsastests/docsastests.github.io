@@ -2,16 +2,16 @@
 layout: post
 author: nikoberry
 image: 
-  path: /images/docs-as-tests-for-rest.png
-  thumbnail: /images/docs-as-tests-for-rest.png
-title: "Docs as Tests for REST"
+  path: /images/validate-api-with-doc-detective.png
+  thumbnail: /images/validate-api-with-doc-detective.png
+title: "Validate an API with Doc Detective"
 date: 2024-01-23 00:00:00 -0000
 categories: tutorial doc-detective REST APIs
 ---
 
 Docs as Tests draws on many of the same principles as test-driven-development and data-driven-development and, as such, is a natural fit for REST API documentation.
 
-Our tool of choice for this tutorial is [Doc Detective](https://doc-detective.com/). Doc Detective is a new open-source tool that brings the power of QA engineering-style assertion tests to technical documentation. The codifier of Docs as Tests also develops it and is, at the time of writing, the only tool built with Docs as Tests in mind.
+Our tool of choice for this tutorial is [Doc Detective](https://doc-detective.com/). Doc Detective is an open-source tool that brings the power of QA engineering-style assertion tests to technical documentation. The codifier of Docs as Tests also develops it, and it is, at the time of writing, the only tool built with Docs as Tests in mind.
 
 This tutorial assumes you know the following:
 
@@ -24,7 +24,7 @@ This tutorial also assumes you have the current LTS version of Node JS installed
 
 ## Install Doc Detective
 
-Install Doc Detective by cloning it onto your machine using Git, navigating into the folder, and using `npm i`.
+Install Doc Detective by cloning it onto your machine using Git, navigating into the folder, and using `npm install`.
 
 ```bash
 git clone https://github.com/doc-detective/doc-detective.git
@@ -38,17 +38,17 @@ Docs as Tests pushes you towards thinking about your documentation scientificall
 
 When you say, "Sending a GET request to the `/dogs` endpoint will return an enumerated list of dog objects," your docs are making an assertion about how the API will perform. By rephrasing that assertion in the form of a test that you store in a JSON object alongside the docs, you can know when something changes about the product that renders the assertion incorrect.
 
-For REST APIs this is as simple as scripting calls to an API and comparing the results against what you expect them to be. Doc Detective provides simple tools for doing this.
+For REST APIs, this is as simple as scripting calls to an API and comparing the results against what you expect them to be. Doc Detective provides simple tools for doing this.
 
 ## Doc Detective core concepts
 
-Doc detective lets you create tests for your docs. You create these tests by creating test schemas in JSON. Tests in Doc Detective have a set of steps that you define and Doc Detective executes in sequence. Each step contains an action which sets ‘what’ Doc Detective does for each step as well as a set of action specific fields that determine ‘how‘ each action gets executed.
+Doc Detective lets you create tests for your docs. You create these tests by creating test specifications in JSON. Tests in Doc Detective have a set of steps that you define and that Doc Detective executes in sequence. Each step contains an action which sets 'what' Doc Detective does for the step as well as a set of action-specific fields that determine 'how' each action gets executed.
 
 For the simple REST API tests in this tutorial, we’re going to focus on different ways of using Doc Detective’s [`httpRequest` action](https://doc-detective.com/reference/schemas/httpRequest.html).
 
 ## Writing your first Doc Detective test
 
-Create a folder named “test-specs” next to the cloned repository of Doc Detective.
+Create a folder named *test-specs* next to the cloned repository of Doc Detective.
 
 ```
 |
@@ -56,7 +56,7 @@ Create a folder named “test-specs” next to the cloned repository of Doc Dete
 +- test-specs
 ```
 
-In the test-specs folder, create a file called rest-test.spec.json. This file is going to be the spec for Doc Detective to run. All the spec object needs to run is a set of tests, but it’s a good practice to give it an `id` and `description` for book keeping
+In the test-specs folder, create a file called *rest-test.spec.json*. This file is going to be the spec for Doc Detective to run. All the spec object needs to run is a set of tests, but it’s a good practice to give it an `id` and `description` for book keeping.
 
 ```json
 {
@@ -89,19 +89,19 @@ Let’s start off with the absolute basics and add a test that calls the api for
 }
 ```
 
-On its own, just checking to see if a URL returns a response is already a powerful tool for making sure docs remain accurate especially for simple `GET` endpoints.
+On its own, just checking to see if a URL returns a response is already a powerful tool for making sure docs remain accurate, especially for simple `GET` endpoints.
 
-Now, save the JSON and return to your terminal that is currently running in the doc-detective directory and execute the following command:
+Now save the JSON, return to your terminal that is currently running in the *doc-detective* directory, and execute the following command:
 
 ```bash
 npm run runTests -- --input ../test-specs/rest-test.spec.json
 ```
 
-Doc Detective should return confirmation that your test passes after taking a moment to execute the tests.
+Doc Detective should return confirmation that your test passes after taking a moment to execute the test.
 
 ## Using other HTTP methods
 
-Testing how endpoints respond to `GET` can only take you so far. The vast majority of APIs you might document will use other methods besides `GET` and Doc Detective supports those with only a few additional lines to the test file.
+Testing how endpoints respond to `GET` can only take you so far. The vast majority of APIs you might document will use other methods besides `GET`, and Doc Detective supports those with only a few additional lines to the test file.
 
 ```json
 {
@@ -130,17 +130,17 @@ Testing how endpoints respond to `GET` can only take you so far. The vast majori
 
 Notice that we’ve added a `statusCodes` object with `200` and `201` as possible response codes. `200` is a very common success code for most calls to an API and is the default code Doc Detective tests. The `POST /users` endpoint of [reqres](http://reqres.in) returns a `201` on the successful creation of a new user and we need to call that out as an acceptable response code otherwise our test will be marked as a failure.
 
-Save the JSON and return to your terminal that is currently running in the doc-detective directory and execute the following command:
+Save the JSON, return to your terminal that is currently running in the *doc-detective* directory, and execute the following command:
 
 ```bash
-npm run runTests -- --input ../test-specs/rest-test.json
+npm run runTests -- --input ../test-specs/rest-test.spec.json
 ```
 
 Doc Detective should return confirmation that your test passes after taking a moment to execute the tests.
 
 ## Testing for specific response contents
 
-While confirming that an API works and returns a certain status code can be helpful, you probably care a lot more about whether the specific details of the how the API responded and what it responded with so you can make sure the claims you’re making in your docs are still valid. Doc Detective has you covered and it only takes a little bit more work.
+While confirming that an API works and returns a certain status code can be helpful, you probably care a lot more about whether the specific details of the how the API responded and what it responded with so you can make sure the claims you’re making in your docs are still valid. Doc Detective has you covered, and it only takes a little bit more work.
 
 ```json
 {
@@ -170,9 +170,9 @@ While confirming that an API works and returns a certain status code can be help
 }
 ```
 
-Now, when you run this test, it will throw an error if the API does not return `name` and `job` fields matching the values you provided.
+Now, when you run this test, it will throw an error if the API does not return `name` field matching the value you provided.
 
-Save the JSON and return to your terminal that is currently running in the doc-detective directory and execute the following command:
+Save the JSON, return to your terminal that is currently running in the *doc-detective* directory, and execute the following command:
 
 ```bash
 npm run runTests -- --input ../test-specs/rest-test.spec.json
@@ -184,7 +184,9 @@ Doc Detective should return confirmation that your test passes after taking a mo
 
 While keeping tests in a separate doc is a clean and convenient way to write JSON, sometimes you might want to keep your tests inline with the rest of your content to make it easier to associate test steps with sections in your docs and know when a test needs to be updated.
 
-Doc Detective supports this approach if you’re documenting your code using markdown and a docs-as-code toolchain.
+Doc Detective supports this approach out of the box if you’re documenting your code using Markdown and a docs-as-code toolchain.
+
+**Note:** If you don’t like this syntax for inline tests---or you use a file format other than Markdown---you can customize your syntax Doc Detective's [config](https://doc-detective.com/reference/schemas/config.html).
 
 First, let’s take a moment to look at the following block of of crude documentation:
 
@@ -220,9 +222,9 @@ If you execute this command in your terminal:
 The API will return confirmation that the request created a new user and will list the fields for that user.
 ```
 
-This is an example of some of documentation that might have prompted the creation of our rest-test.json spec for Doc Detective. By thinking in tests, we can see how the docs contain a set of statements that we end up testing. However, depending on your taste for updating docs, writing tests, and tracking storage, you may find it more convenient to keep the tests inline with the rest of the docs, then you can do so by adding inline comments.
+This is an example of some of documentation that might have prompted the creation of our *rest-test.spec.json* spec for Doc Detective. By thinking in tests, we can see how the docs contain a set of statements that we end up testing. However, depending on your taste for updating docs, writing tests, and tracking storage, you may find it more convenient to keep the tests inline with the rest of the docs. You can do so by adding inline comments.
 
-Take a look at the previous markdown document with Doc Detective tests inserted inline:
+Take a look at the previous Markdown document with Doc Detective tests inserted inline:
 
 ```markdown
 # Reqres API
@@ -271,11 +273,9 @@ Take note of the following traits of inline tests.
 
 - Each test begins with a `(test start)` and `(test end)` statement.
 - Tests can have one or more steps which are declared with `(step)` statements.
-- Each step includes json that is exactly the same as the step objects in rest-test.spec.json but reduced to a single string.
+- Each step includes JSON that is exactly the same as the step objects in *rest-test.spec.json* but reduced to a single string.
 
-If you don’t like this syntax for inline tests, you can customize it in the config files for 
-
-Copy the markdown with inline tests, paste it into your [rest-test.md](http://rest-test.md) file in the test-specs folder and then run the following in the command line:
+Copy the Markdown with inline tests, paste it into a new *rest-test.md* file in the *test-specs* folder, and then run the following in the command line:
 
 ```bash
 npm run runTests -- --input ../test-specs/rest-test.md
@@ -285,9 +285,9 @@ Doc Detective should return confirmation that your test passes after taking a mo
 
 ## Loading data from a .env file
 
-If an API does anything important, it probably has some kind of authentication. One of the most common authentications is including an API secret as a field in the request body. Since hard coding authentication keys into source code is bad for security, Doc Detective includes tools to load variables from a .env file.
+If an API does anything important, it probably has some kind of authentication. One of the most common authentications is including an API secret as a field in the request body or as a header, both of which Doc Detective supports. Since hard-coding authentication keys into source code is bad for security, Doc Detective includes tools to load variables from a .env file.
 
-Create a folder called .env in the same directory as your rest-test.spec.json file. Add the following text to your .env file and save it.
+Create a file called *.env* in the same directory as your *rest-test.spec.json* file. Add the following text to your *.env* file and save it.
 
 ```
 USER="John Doe"
@@ -295,7 +295,7 @@ JOB="Software Engineer"
 SECRET="YOUR_SECRET_KEY"
 ```
 
-Create another file in the same directory named env-variable-tests.spec.json and add the following text to the file:
+Create another file in the same directory named *env-variable-tests.spec.json*, and add the following text to the file:
 
 ```json
 {
@@ -331,7 +331,7 @@ Create another file in the same directory named env-variable-tests.spec.json and
 }
 ```
 
-In this example there’s a step with a `setVariables` action. This will look at the file at the path we designate and load all of its key value pairs as variables that you can invoke with a syntax reminiscent of calling variables in BASH (`“$VAR”`).
+In this example, there’s a step with a `setVariables` action. This will look at the file at the path we designate and load all of its key value pairs as variables that you can invoke with a syntax reminiscent of calling variables in BASH (`$VAR`).
 
 Run the following in the command line:
 
@@ -345,7 +345,7 @@ Doc Detective should return confirmation that your test passes after taking a mo
 
 A common case while working with APIs is needing to make a sequence of chained calls to the API where you include data from a previous response in the requests. Doc Detective supports this through the `envsFromResponseData` field on the `httpRequest` action.
 
-Let’s replace the current code in env-variable-tests.spec.json with the following.
+Let’s replace the current code in *env-variable-tests.spec.json* with the following.
 
 ```json
 {
@@ -397,9 +397,9 @@ Let’s replace the current code in env-variable-tests.spec.json with the follow
 }
 ```
 
-This code has the `envsFromResponseData` which sets a new `ID` environment variable with a value equal to the id value returned when we create a new user. In the following `httpRequest` test, we include `ID` variable in the URL we send the GET request to. 
+This code has the `envsFromResponseData` which sets a new `ID` environment variable with a value equal to the `id` value returned when we create a new user. In the following `httpRequest` test, we include the `ID` variable in the URL for the GET request. 
 
-Run the following in the command line to confirm that the tests work as expected:
+Run the following in the command line to confirm that the test works as expected:
 
 ```bash
 npm run runTests -- --input ../test-specs/env-variable-tests.spec.json
