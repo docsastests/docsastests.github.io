@@ -1,1 +1,1 @@
-https://www.docsastests.com/validate-api-with-doc-detective
+https://www.docsastests.com/validate-ui-with-doc-detective

@@ -150,6 +150,7 @@ async function sendEmailUpdate(entry) {
     // Remove all content from the final <hr> to the end of the string
     const hrIndex = text.lastIndexOf("<hr");
     text = text.slice(0, hrIndex - 1);
+
     
     const html = `
     <head>${style}</head>
@@ -160,8 +161,9 @@ async function sendEmailUpdate(entry) {
           <h1 class="title">Docs as Tests</h1>
           <p><i>You received this email because you subscribed to updates from <a href="https://www.docsastests.com">Docs as Tests</a>.</i></p>
         </div>
-        <h1><a href="${entry.id[0]}?utm_source=email&utm_medium=email&utm_campaign=dat_newsletter&utm_content=title-link"${entry.title[0]._}</a></h1>
-        <p>By ${entry.author[0].name[0]}</p>
+        <img src="${entry["media:thumbnail"][0].$.url}" />
+        <h1><a href="${entry.id[0]}?utm_source=email&utm_medium=email&utm_campaign=dat_newsletter&utm_content=title-link">${entry.title[0]._}</a></h1>
+        <p><i>By ${entry.author[0].name[0]}</i></p>
         ${text}
       </div>
     </body>`;
