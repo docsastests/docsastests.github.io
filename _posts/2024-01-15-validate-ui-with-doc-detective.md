@@ -12,7 +12,7 @@ Docs as Tests is a strategy for using docs to test a product, validating both th
 
 Today, I'll show you how to validate a UI-based procedure with Doc Detective—a doc testing framework—to make sure that it works as expected. While UI-based procedures are only a piece to the puzzle that is Docs as Tests, it's the largest unknown for most people, so let's start there.
 
-(Disclosure: I'm the creator of Doc Detective, but I'll try to keep this as objective as possible. If you have questions, feel free to reach out in the comments, on social media, or on [Discord](https://discord.com/invite/sgnE22uZ9w).)
+{% include tools/disclosure-doc-detective.md %}
 
 ## The setup
 
@@ -60,7 +60,7 @@ cd doc-detective
 npm install
 ```
 
-Doc Detective automatically downloads portable versions of Chromium and Firefox to your machine to use in testing. By default, Doc Detective runs tests against Chromium, but you can specify one or more contexts (browsers) to run your tests against if you so choose. For today, we'll stick with Chromium.
+Doc Detective automatically downloads portable versions of Chrome and Firefox to your machine to use in testing. By default, Doc Detective runs tests against Chrome, but you can specify one or more contexts (browsers) to run your tests against if you so choose. For today, we'll stick with Chrome.
 
 Next up, writing the test!
 
