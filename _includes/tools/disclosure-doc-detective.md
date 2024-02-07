@@ -1,0 +1,1 @@
+(Disclosure: I'm the creator of Doc Detective, but I'll try to keep this as objective as possible. If you have questions, feel free to reach out in the comments, on social media, or on [Discord](https://discord.com/invite/sgnE22uZ9w).)

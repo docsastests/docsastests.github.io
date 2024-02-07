@@ -6,9 +6,9 @@ mannysilva:
     - title: LinkedIn
       url: https://www.linkedin.com/in/manuelrbsilva/
       icon: fab fa-linkedin
-    - title: Twitter
-      url: https://twitter.com/hawkeyexl
-      icon: fab fa-twitter-square
+    # - title: Twitter
+    #   url: https://twitter.com/hawkeyexl
+    #   icon: fab fa-twitter-square
     - title: GitHub
       url: https://github.com/hawkeyexl
       icon: fab fa-github-square
