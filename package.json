@@ -4,7 +4,8 @@
   "description": "Docs as Tests website",
   "main": "index.js",
   "scripts": {
-    "start": "jekyll serve --livereload",
+    "postinstall": "gem install jekyll bundler && bundle install",
+    "start": "bundle exec jekyll serve --livereload --future",
     "test": "jekyll build"
   },
   "repository": {
