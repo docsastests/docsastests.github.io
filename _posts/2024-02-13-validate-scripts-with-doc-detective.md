@@ -19,7 +19,7 @@ This is going to get a little meta!
 
 ## The setup
 
-In the UI validation tutorial, validated a procedure for searching for American Shorthair kittens on Google, but if you look at all the steps involved, a lot was going on:
+In the UI validation tutorial, we validated a procedure for searching for American Shorthair kittens on Google, but if you look at all the steps involved, a lot was going on:
 
 1. Install Doc Detective.
 2. Save the procedure as a Markdown file.
@@ -167,7 +167,7 @@ This script is a little more complex than the others, but it's a great way to va
 
 ## Validate other kinds of scripts
 
-Script validation isn't limited to `bash`. As long as your script can return a non-zero exit code, in can be in any language you like, whether that's JavaScript, Python, Ruby, or whatever else. Any command you can run from the command line, you can validate with Doc Detective.
+Script validation isn't limited to `bash`. As long as your script can return a non-zero exit code, in can be in any language you like, whether that's JavaScript, Python, Ruby, or whatever else. Any command you can run from the command line, you can validate with Doc Detective. Need to validate an SDK? Write a script and go for it.
 
 For example, here's a script that validates only the outputs of our UI procedure. Save this script as _validate-kitten-search-outputs.js_:
 
@@ -220,11 +220,11 @@ Just like the `bash` script and the individual commands before it, this script e
 
 ## One more thing!
 
-If you're not running Doc Detective as part of a script, you can use `runShell` to help set up your test environment. For example, you can use `runShell` to install dependencies, spin up Docker containers, or perform other setup tasks before running your tests. This is a great way to keep your tests self-contained and to automate away all the necessities of running your tests.
+If you're not running Doc Detective as part of a script, you can use `runShell` to help set up your test environment. For example, you can use `runShell` to install dependencies, spin up Docker containers, or perform other setup tasks before running your tests. This is a great way to automate your tests and keep them self-contained.
 
 ## Conclusion
 
-If you want to validate individual commands, to validate scripts in whichever language you require, or to automate your testing environment, Doc Detective is a powerful tool at your disposal. With Doc Detective, you can validate UIs, APIs, and everything in between to make sure your content works as expected and as your users expect it to.
+If you want to validate individual commands, to validate scripts in whichever language you require, or to automate your testing environment, Doc Detective is a powerful tool at your disposal. With Doc Detective, you can validate UIs, APIs, and everything in between to make sure your content works the way you and your users expect.
 
 ---
 
