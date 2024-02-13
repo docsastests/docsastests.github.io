@@ -1,1 +1,1 @@
-https://www.docsastests.com/docs-as-tests-vs-docs-as-code
+https://www.docsastests.com/validate-scripts-with-doc-detective
