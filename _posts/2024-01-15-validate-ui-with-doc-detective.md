@@ -10,7 +10,7 @@ categories: tutorial doc-detective
 
 Docs as Tests is a strategy for using docs to test a product, validating both that the docs are accurate and that the product is functioning as expected. That's a great aspiration, but what does it look like in practice?
 
-Today, I'll show you how to validate a UI-based procedure with Doc Detective—a doc testing framework—to make sure that it works as expected. While UI-based procedures are only a piece to the puzzle that is Docs as Tests, it's the largest unknown for most people, so let's start there.
+Today, I'll show you how to validate a UI-based procedure with [Doc Detective](https://doc-detective.com)—a doc testing framework—to make sure that it works as expected. While UI-based procedures are only a piece to the puzzle that is Docs as Tests, it's the largest unknown for most people, so let's start there.
 
 {% include tools/disclosure-doc-detective.md %}
 
@@ -54,7 +54,7 @@ Before you can get Doc Detective running, you need the prerequisites:
 
 Once you have those installed, you can clone Doc Detective to your machine and install dependencies:
 
-```
+```bash
 git clone https://github.com/doc-detective/doc-detective.git
 cd doc-detective
 npm install
@@ -83,8 +83,8 @@ First, let's look at a JSON file version of the test (we'll call it _kitten-sear
           "action": "find",
           "selector": "[title=Search]",
           "click": true
-	      },
-	      {
+        },
+        {
           "action": "typeKeys",
           "keys": ["American Shorthair kittens", "$ENTER$"]
         },
@@ -143,7 +143,7 @@ To search for American Shorthair kittens,
 [comment]: # (step { "action": "saveScreenshot", "path": "search-results.png" })
 ```
 
-The test and individual steps are exactly the same as in the JSON example, but both are supported to let content developers decide how and where to store tests for their workflows. In-line tests also enable semantics-driven tests, but that's a topic for another day. ;)
+The test and individual steps are exactly the same as in the JSON example, but both are supported to let content developers decide how and where to store tests for their workflows. In-line tests also enable semantics-driven tests, but that's a topic for another day.
 
 Now let's run the test!
 
