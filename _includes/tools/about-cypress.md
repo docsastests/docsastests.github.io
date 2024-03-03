@@ -1,0 +1,1 @@
+[Cypress](cypress.io) is a popular end-to-end testing framework that's easy to use and has a great community. If you're familiar with JavaScript or TypeScript, it's a great choice for testing your documentation against your product UIs and APIs. For more information, see the [Cypress documentation](https://docs.cypress.io/guides/overview/why-cypress.html).
