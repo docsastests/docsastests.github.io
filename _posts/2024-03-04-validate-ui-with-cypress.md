@@ -114,7 +114,7 @@ Cypress opens and runs the test in your browser. You'll see the test steps in th
 
 If you hover over the steps in the left pane, you can see the screenshots that Cypress took at each step. This is a great way to visually validate that your test is working as expected.
 
-With the new screenshot, _kitten-search.md_ now renders like this:
+Move the new screenshot into the same directory as _kitten-search.md_, and the procedure now renders like this:
 
 ![Rendered preview of kitten-search.md with screenshot](/images/validate-ui-doc-detective-after.png)
 
