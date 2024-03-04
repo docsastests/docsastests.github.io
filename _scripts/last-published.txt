@@ -1,1 +1,1 @@
-https://www.docsastests.com/from-development-to-production
+https://www.docsastests.com/validate-ui-with-cypress
