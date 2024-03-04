@@ -1,8 +1,8 @@
 ---
 layout: post
 image: 
-  path: /images/validate-ui-cypress.png
-  thumbnail: /images/validate-ui-cypress.png
+  path: /images/validate-ui-with-cypress.webp
+  thumbnail: /images/validate-ui-with-cypress.webp
 title: "Validate a UI with Cypress"
 categories: tutorial cypress
 ---
