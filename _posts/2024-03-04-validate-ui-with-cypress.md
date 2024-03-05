@@ -67,7 +67,7 @@ Once you have those installed, you can install Cypress with NPM.
     npx cypress open
     ```
 
-  The Cypress Test Runner opens.
+    The Cypress Test Runner opens.
 
 1. Click **E2E Testing**, click **Chrome**, then click **Start E2E Testing in Chrome**. This opens a new browser window with Cypress running.
 
