@@ -1,0 +1,24 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>{{ site.title }}</title>
+          <link>{{ site.url }}</link>
+              <description>{{ site.description
+            }}</description>
+                  <language>en-us</language>
+                      <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+                          <lastBuildDate>{{
+        site.time | date_to_rfc822 }}</lastBuildDate>
+                              <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+                                  <generator>Jekyll
+        v{{ jekyll.version }}</generator> {% for post in site.posts limit:20 %} <item>
+            <title>{{ post.title }}</title>
+            <link>{{ site.url }}{{ post.url }}</link>
+            <description>{{ post.excerpt | strip_html | xml_escape }}</description>
+            <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+            <guid>{{ site.url }}{{ post.url }}</guid>
+        </item> {% endfor %} </channel>
+</rss>
