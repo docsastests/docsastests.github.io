@@ -1,5 +1,6 @@
 ---
 layout: post
+author: nikoberry
 image: 
   path: /images/ci-with-github-actions.webp
   thumbnail: /images/ci-with-github-actions.webp
