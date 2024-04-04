@@ -7,8 +7,6 @@ title: "Add Docs as Tests to Your CI/CD pipeline with GitHub Actions"
 categories: tutorial ci cd github github-actions doc-detective
 ---
 
-# Add Docs as Tests to Your CI/CD pipeline with GitHub Actions
-
 Adding Doc Detective into a CI/CD pipeline to run tests whenever changes occur in a repository is easy and gives you a flexible and powerful tech doc toolchain. In this guide, we’ll walk through setting up a basic Docs as Code pipeline using the venerable Jekyll static site generator, set up some simple doc detective tests, and put together scripts for a CI/CD pipeline using Github Actions to demonstrate how to automatically test your docs off of each update.
 
 ## Prerequisites
