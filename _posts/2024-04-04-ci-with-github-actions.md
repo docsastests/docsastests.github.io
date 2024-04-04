@@ -3,7 +3,7 @@ layout: post
 image: 
   path: /images/ci-with-github-actions.webp
   thumbnail: /images/ci-with-github-actions.webp
-title: "Add Docs as Tests to Your CI/CD pipeline with GitHub Actions"
+title: "Add Docs as Tests to Your CI/CD Pipeline with GitHub Actions"
 categories: tutorial ci cd github github-actions doc-detective
 ---
 
