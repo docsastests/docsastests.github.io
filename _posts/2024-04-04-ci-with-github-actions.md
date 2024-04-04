@@ -87,16 +87,16 @@ You can add content to your site by adding markdown files to the `_posts` direct
 
 Create a new file in the `_posts` directory called `2024-02-16-reqres-docs.md`, and add the following content:
 
-    ```markdown
-    ---
-    layout: post
-    title:  "Reqres API"
-    ---
+```markdown
+---
+layout: post
+title:  "Reqres API"
+---
 
-    ## Resource Endpoint
-    If you execute this command in your terminal:
+## Resource Endpoint
+If you execute this command in your terminal:
 
-    [comment]: # (test start {"id": "Test 1", "description": "Test if the endpoint is working at all."})
+[comment]: # (test start {"id": "Test 1", "description": "Test if the endpoint is working at all."})
 
     ```sh
     curl -X 'GET' \
@@ -104,16 +104,16 @@ Create a new file in the `_posts` directory called `2024-02-16-reqres-docs.md`, 
       -H 'accept: application/json'
     ```
 
-    [comment]: # (step {"action": "httpRequest", "url": "https://reqres.in/api/{resource}"})
+[comment]: # (step {"action": "httpRequest", "url": "https://reqres.in/api/{resource}"})
 
-    The API will return a list of resources.
+The API will return a list of resources.
 
-    [comment]: # (test end)
+[comment]: # (test end)
 
-    ## Creating Users
-    If you execute this command in your terminal:
+## Creating Users
+If you execute this command in your terminal:
 
-    [comment]: # (test start {"id": "Test 2", "description": "Test the user creation endpoint"})
+[comment]: # (test start {"id": "Test 2", "description": "Test the user creation endpoint"})
 
     ```sh
     curl --request POST \
@@ -126,12 +126,12 @@ Create a new file in the `_posts` directory called `2024-02-16-reqres-docs.md`, 
     }'
     ```
 
-    [comment]: # (step { "action": "httpRequest", "url": "https://reqres.in/api/users", "method": "post", "requestData": { "name": "Doc Brow", "job": "Test master" }, "responseData": { "name": "Doc Brown" }, "statusCodes": [200, 201] })
+[comment]: # (step { "action": "httpRequest", "url": "https://reqres.in/api/users", "method": "post", "requestData": { "name": "Doc Brow", "job": "Test master" }, "responseData": { "name": "Doc Brown" }, "statusCodes": [200, 201] })
 
-    The API will return confirmation that the request created a new user and will list the fields on that user.
+The API will return confirmation that the request created a new user and will list the fields on that user.
 
-    [comment]: # (test end)
-    ```
+[comment]: # (test end)
+```
 
 Now, save and commit the changes to your repository and push them to the `gh-pages` branch.
 
