@@ -1,1 +1,1 @@
-https://www.docsastests.com/validate-ui-with-cypress
+https://www.docsastests.com/ci-with-github-actions
