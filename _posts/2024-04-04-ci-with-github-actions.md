@@ -219,7 +219,6 @@ jobs:
 
     - name: Run Doc Detective tests
       run: |
-        cd doc-detective
         npx -y doc-detective runTests --input _posts/
         latest_results=$(ls -t /home/runner/work/doc-detective-ci-cd/doc-detective-ci-cd/*.json | head -n1)
         echo "Latest results file: $latest_results"
