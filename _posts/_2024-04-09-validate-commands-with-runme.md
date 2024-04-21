@@ -1,20 +1,63 @@
 ---
 layout: post
 image: 
-  path: /images/validate-commands-with-a-script.webp
-  thumbnail: /images/validate-commands-with-a-script.webp
-title: "Validate a UI with Cypress"
-categories: tutorial bash code-blocks
+  path: /images/validate-commands-with-innovation-engine.webp
+  thumbnail: /images/validate-commands-with-innovation-engine.webp
+title: "Validate Commands With Microsoft Azure's Innovation Engine"
+categories: tutorial bash code-blocks innovation-engine microsoft azure
 ---
+
+# Validate Commands With Microsoft Azure's Innovation Engine
+## TODO
 
 Not every Docs as Tests implementation needs to be complicated. If you can narrow down exactly what you want to test, such as running the `curl` commands you have in code blocks, you might be able to test your docs with a script.
 
 Here, we'll cover how to test all the curl commands in code blocks within a tutorial written in Markdown. This is a `bash` script, and no tooling is necessary other than a `bash` shell.
 
+
+## Prerequisites
+
+This tutorial is *slightly* more advanced than other recent ones. Let's make sure you're ready to go. You need
+
+- A Linux environment (WSL on Windows works great). Sorry, Innovation Engine is Linux-only at the moment.
+- [Go](https://go.dev/doc/install) installed on your machine.
+
+    As of writing, the latest version of Go is v1.22.2, and you can install it on AMD64 systems with the following commands:
+
+    ```bash
+    wget https://go.dev/dl/go1.22.2.linux-amd64.tar.gz
+    tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz
+    export PATH=$PATH:/usr/local/go/bin
+    go version
+    ```
+
+    The output should be similar to
+    ```
+    go version go1.22.2 linux/amd64
+    ```
+
+## Setup
+
+To install and build Innovation Engine, we just need to clone the repo and run the build command:
+
+```bash
+git clone https://github.com/Azure/InnovationEngine
+cd InnovationEngine
+make build-ie
+```
+
+The output should be similar to
+<!!--expected_similarity=0.8-->
+```
+Building the Innovation Engine CLI...
+```
+
+This builds the Innovation Engine binary in the `bin` directory. You can move this binary to a location in your `PATH` for easy access.
+
 ## The Short Way
 
-1. Download [reqres_tutorial.md][].
-1. Download [run_curl_blocks.sh][].
+1. Download <a href="/assets/reqres_tutorial.md" download="reqres_tutorial.md">reqres_tutorial.md</a>.
+1. Download <a href="/assets/run_curl_blocks.sh">run_curl_blocks.sh</a>.
 1. In a terminal, make the script executable:
 
     ```bash
@@ -36,30 +79,17 @@ Here's a simple tutorial in Markdown that uses ReqRes, a frontend testing API th
 
 This tutorial covers the basics of interacting with the ReqRes API, a fake online REST API designed for testing and prototyping. We'll go through two common operations: fetching a list of users and creating a new user.
 
-## Getting Started
-
 ReqRes is a free service and doesn't require authentication, making it perfect for quick testing.
 
 ## 1. Fetching a List of Users
 
 The ReqRes API allows you to fetch a paginated list of users. This can be useful for understanding how to navigate through paginated responses in APIs.
 
-### Request:
-
-- **Method**: GET
-- **Endpoint**: `https://reqres.in/api/users`
-- **Query Parameters**:
-  - `page`: Specify the page number to retrieve.
-
-### Example:
-
 To fetch the first page of users, you would make the following `curl` request:
 
     ```curl
     curl https://reqres.in/api/users
     ```
-
-### Response:
 
 The response is a JSON object containing an array of users, the total number of users, and pagination details.
 
@@ -86,16 +116,6 @@ The response is a JSON object containing an array of users, the total number of 
 
 The ReqRes API also allows you to create a new user. This is a basic example of a POST request.
 
-### Request:
-
-- **Method**: POST
-- **Endpoint**: `https://reqres.in/api/users`
-- **Body** (JSON):
-  - `name`: The name of the new user.
-  - `job`: The job title of the new user.
-
-### Example:
-
 To create a new user, send a JSON payload with the user's name and job title:
 
     ```curl
@@ -106,8 +126,6 @@ To create a new user, send a JSON payload with the user's name and job title:
         "job": "Developer"
       }'
     ```
-
-### Response:
 
 The response contains the details of the created user along with a timestamp.
 
@@ -123,7 +141,7 @@ The response contains the details of the created user along with a timestamp.
 This concludes the tutorial on how to interact with the ReqRes API, specifically focusing on fetching user data and creating a new user.
 ```
 
-Using this tutorial, we can write a script that runs the commands in ````curl` code blocks to make sure they run correctly.
+Using this tutorial, we can write a script that runs the commands in <code>```curl</code> code blocks to make sure they run correctly.
 
 Save the following bash script as *run_curl_blocks.sh*:
 
@@ -195,5 +213,5 @@ This simple script demonstrates how you can test your documentation by running t
 
 By validating your documentation with scripts, you can ensure that your code examples are accurate and up-to-date, providing a better experience for your users.
 
-[reqres_tutorial.md]: /artifacts/reqres_tutorial.md
-[run_curl_blocks.sh]: /artifacts/run_curl_blocks.sh
+[reqres_tutorial.md]: /assets/reqres_tutorial.md
+[run_curl_blocks.sh]: /assets/run_curl_blocks.sh
