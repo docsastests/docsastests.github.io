@@ -239,3 +239,13 @@ There’s a failing test in the markdown test earlier in this post. The Github a
 ## Conclusion
 
 In this tutorial, we set up a Jekyll site with GitHub Pages, added content to the site, and set up a GitHub Action to run Doc Detective tests on the content whenever we push new content to the `gh-pages` branch. Now, as your product evolves, you can be confident that changes that break the test will come to your attention immediately.
+
+---
+
+## About the tool
+
+{% include tools/about-doc-detective.md %}
+
+---
+
+{% include newsletter.md %}

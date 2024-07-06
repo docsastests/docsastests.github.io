@@ -1,0 +1,1 @@
+Azure's Innovation Engine is a CLI tool that transforms markdown documentation into executable scripts. This allows for interactive tutorials, automated tests, and execution of CLI commands, making sure your documentation remains accurate and up-to-date. For more information, see the [Innovation Engine GitHub repository](https://github.com/Azure/InnovationEngine).
