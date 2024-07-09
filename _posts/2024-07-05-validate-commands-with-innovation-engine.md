@@ -11,18 +11,20 @@ Maintaining accurate and reliable CLI-based documentation is critical, especiall
 
 Azure's Innovation Engine, [introduced at the Linux Foundation Open Source Summit North America 2024](https://youtu.be/6eNLouO0LcA?si=vvAYCMAPo7yRMD3C){:target="_blank"}, transforms Markdown into executable scripts, enabling interactive tutorials, automated tests, response validation, and execution of CLI commands. While Innovation Engine is still in the early stages of development, it shows promise for improving the quality and accuracy of CLI-based docs.
 
-Here, we'll cover how to use Innovation Engine to test all the `bash` commands in code blocks within a tutorial written in Markdown. We'll use a simple tutorial that interacts with the ReqRes API, a fake online REST API designed for testing and prototyping. One item to note, though: Innovation Engine is Linux-only at the moment, so you'll need a Linux environment ([Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/){:target="_blank"} on Windows works great) to follow along.
+Here, we'll cover how to use Innovation Engine to test all the `bash` commands in code blocks within a tutorial written in Markdown. We'll use a simple tutorial that interacts with the ReqRes API, a fake online REST API designed for testing and prototyping. One item to note, though: Innovation Engine is `bash`-only at the moment, so you'll need a macOS or Linux environment ([Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/){:target="_blank"} on Windows works great) to follow along.
 
 ## Prerequisites
 
 This tutorial is *slightly* more advanced than other recent ones. Let's make sure you're ready to go. You need
 
-- A Linux environment (or WSL on Windows).
+- A `bash` shell.
 - [Go](https://go.dev/doc/install){:target="_blank"} installed on your machine.
 
 ## Set up Innovation Engine
 
-To install and build Innovation Engine, we just need to clone the repo and run the build command:
+To install and build Innovation Engine, you need to download or build the `ie` binary.
+
+On Linux, you can download the binary and make it executable with the following commands:
 
 ```bash
 VERSION="latest"
@@ -30,7 +32,14 @@ wget -q -O ie https://github.com/Azure/InnovationEngine/releases/download/$VERSI
 chmod +x ie
 ```
 
-This downloads the Innovation Engine binary and makes it executable.
+On macOS (or if you like to go the hard road on Linux), you need to clone the repo and run the build command:
+
+```bash
+git clone https://github.com/Azure/InnovationEngine;
+cd InnovationEngine;
+make build-ie;
+cd ./bin
+```
 
 ## Sample document and formatting
 
