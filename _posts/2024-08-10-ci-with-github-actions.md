@@ -168,14 +168,14 @@ jobs:
       uses: actions/checkout@v4
 ```
 
-Finally, we can run the tests by running Doc Detective and passing the path to the `_posts` directory in the repository we're running the tests on. We’ll also set `exit-on-fail` to `true` to throw an error if there are any failed tests.
+Finally, we can run the tests by running Doc Detective and passing the path to the `_posts` directory in the repository we're running the tests on. We’ll also set `exit_on_fail` to `true` to throw an error if there are any failed tests.
 
 ```yaml
     - name: Run Doc Detective tests
       uses: doc-detective/github-action@v1
       with:
         input: _posts/
-        exit-on-fail: true
+        exit_on_fail: true
 ```
 
 Putting the entire workflow together, we get the following:
@@ -200,7 +200,7 @@ jobs:
       uses: doc-detective/github-action@v1
       with:
         input: _posts/
-        exit-on-fail: true
+        exit-_on_fail: true
 ```
 
 Save and commit the changes to your repository and push them to the `gh-pages` branch. Now, whenever you push new content to the `gh-pages` branch, the tests will run and you will be able to see the results in the Actions tab of your repository.
