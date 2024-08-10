@@ -8,6 +8,8 @@ title: "Add Docs as Tests to Your CI/CD Pipeline with GitHub Actions"
 categories: tutorial ci cd github github-actions doc-detective
 ---
 
+> August 10, 2024: Updated the tutorial to use the [Doc Detective GitHub Action](https://github.com/marketplace/actions/doc-detective).
+
 Adding Doc Detective into a CI/CD pipeline to run tests whenever changes occur in a repository is easy and gives you a flexible and powerful tech doc toolchain. In this guide, we’ll walk through setting up a basic Docs as Code pipeline using the venerable Jekyll static site generator, set up some simple doc detective tests, and put together scripts for a CI/CD pipeline using Github Actions to demonstrate how to automatically test your docs off of each update.
 
 ## Prerequisites
@@ -138,13 +140,12 @@ Now, save and commit the changes to your repository and push them to the `gh-pag
 
 ## Setting up GitHub Actions
 
-Now that we have a Jekyll site set up and hosted on GitHub Pages, we can set up a GitHub Action to run the tests whenever we push new content to the `gh-pages` branch.
+Now that we have a Jekyll site set up and hosted on GitHub Pages, we can set up the [Doc Detective GitHub Action](https://github.com/marketplace/actions/doc-detective) to run the tests whenever we push new content to the `gh-pages` branch.
 
 Create a new file in the `.github/workflows` directory called `docs-as-tests.yml`, and add the following content:
 
 ```yaml
 name: Docs as Tests
-
 ```
 
 Next, let's add a trigger to the workflow that prompts the action to run whenever we push new content to the `gh-pages` branch.
@@ -154,47 +155,33 @@ on:
   push:
     branches:
       - gh-pages
-
-jobs:
-  run-tests:
-    - name: Checkout <your-github>/doc-detective-ci-cd repository
-      uses: actions/checkout@v2
-      with:
-        repository: '<your-github>/doc-detective-ci-cd'
-        ref: 'gh-pages'  # Specify the branch to checkout
 ```
 
-Now, let's add a job to the workflow that runs the tests. Github Actions run on a fresh virtual machine each time they're triggered, so we need to install Node, which is a prerequisite for Doc Detective.
+Now, let's add a job to the workflow that runs the tests. Github Actions run on a fresh virtual machine each time they're triggered, so we need to check out the repository with our changes.
 
 ```yaml
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
+jobs:
+  run-tests:
+    steps:
+
+    - name: Checkout doc-detective-ci-cd repository
+      uses: actions/checkout@v4
 ```
 
-Finally, we can run the tests by running Doc Detective and passing the path to the `_posts` directory in the repository we're running the tests on. We’ll also include some basic bash scripting to parse the results from Doc Detective and have Github throw an error for the action if it sees any failed tests.
+Finally, we can run the tests by running Doc Detective and passing the path to the `_posts` directory in the repository we're running the tests on. We’ll also set `exit-on-fail` to `true` to throw an error if there are any failed tests.
 
 ```yaml
     - name: Run Doc Detective tests
-      run: |
-        npx -y doc-detective runTests --input _posts/
-        latest_results=$(ls -t /home/runner/work/doc-detective-ci-cd/doc-detective-ci-cd/*.json | head -n1)
-        echo "Latest results file: $latest_results"
-        failures=$(jq -r '.specs[] | select(.result=="FAIL") | .tests[] | select(.result=="FAIL") | .contexts[] | select(.result=="FAIL") | .steps[] | select(.result=="FAIL") | .resultDescription' "$latest_results")
-        if [ -n "$failures" ]; then
-            echo "Failures detected:"
-            echo "$failures"
-            exit 1
-        else
-            echo "No failures detected."
-        fi
+      uses: doc-detective/github-action@v1
+      with:
+        input: _posts/
+        exit-on-fail: true
 ```
 
 Putting the entire workflow together, we get the following:
 
 ```yaml
-name: Run Doc Detective Tests
+name: Docs as Tests
 
 on:
   push:
@@ -206,30 +193,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Checkout <your-github>/doc-detective-ci-cd repository
-      uses: actions/checkout@v2
-      with:
-        repository: '<your-github>/doc-detective-ci-cd'
-        ref: 'gh-pages'  # Specify the branch to checkout
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
+    - name: Checkout doc-detective-ci-cd repository
+      uses: actions/checkout@v4
 
     - name: Run Doc Detective tests
-      run: |
-        npx -y doc-detective runTests --input _posts/
-        latest_results=$(ls -t /home/runner/work/doc-detective-ci-cd/doc-detective-ci-cd/*.json | head -n1)
-        echo "Latest results file: $latest_results"
-        failures=$(jq -r '.specs[] | select(.result=="FAIL") | .tests[] | select(.result=="FAIL") | .contexts[] | select(.result=="FAIL") | .steps[] | select(.result=="FAIL") | .resultDescription' "$latest_results")
-        if [ -n "$failures" ]; then
-            echo "Failures detected:"
-            echo "$failures"
-            exit 1
-        else
-            echo "No failures detected."
-        fi
+      uses: doc-detective/github-action@v1
+      with:
+        input: _posts/
+        exit-on-fail: true
 ```
 
 Save and commit the changes to your repository and push them to the `gh-pages` branch. Now, whenever you push new content to the `gh-pages` branch, the tests will run and you will be able to see the results in the Actions tab of your repository.
