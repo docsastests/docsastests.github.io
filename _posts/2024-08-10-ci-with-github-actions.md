@@ -25,7 +25,7 @@ This tutorial is mostly focused on setting up Doc Detective in CI/CD, so we're g
 
 ## The Lazy Way
 
-If you don't want to go through all of the steps above, you can just fork the [doc-detective-ci-cd starting point branch](https://github.com/nikomancy/doc-detective-ci-cd/tree/starting-point) which contains the files you would get from following the above instructions.
+If you don’t want to go through all of the following steps, you can fork the [doc-detective-ci-cd starting point branch](https://github.com/nikomancy/doc-detective-ci-cd/tree/starting-point). This branch contains the files and code you would get from following the instructions in this post.
 
 Download the contents of the branch, add them to your own repository's `gh-pages` branch, and push them to origin.
 
