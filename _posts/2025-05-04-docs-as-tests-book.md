@@ -11,6 +11,8 @@ categories: docs-as-tests announcement
 
 I'm thrilled to announce that my book, "Docs as Tests: A Strategy for Resilient Technical Documentation" is now available! After years of developing this approach at companies like Skyflow and sharing it with the documentation community, I've created a comprehensive guide to help technical writers and developers keep documentation accurate and in sync with products.
 
+[Get your copy today!](https://amzn.to/48958Kf)
+
 ## What You'll Learn
 
 _Docs as Tests_ introduces a powerful strategy that treats documentation as testable assertions about how your product works. By implementing automated testing for your documentation, you can:
@@ -38,4 +40,4 @@ Based on the enthusiastic response to the book, I'm considering developing a han
 
 Whether you're a technical writer, developer, documentation manager, or anyone else involved in creating technical documentation, "Docs as Tests" will help you build more resilient, trustworthy docs.
 
-Ready to transform your documentation strategy? [Get your copy today!](https://amzn.to/42V4kWR)
+Ready to transform your documentation strategy? [Get your copy today!](https://amzn.to/48958Kf)
