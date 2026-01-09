@@ -91,7 +91,7 @@ When Kong launched Event Gateway, a new product, the doc tests were ready from d
 
 — Fabian Rodriguez
 
-### Better Tests Than Engineering
+### Doc Tests That Compliment Engineering Tests
 
 Perhaps the most striking validation came from Kong's engineering teams. Doc tests that simulate real user workflows often catch issues that traditional unit and integration tests miss.
 
