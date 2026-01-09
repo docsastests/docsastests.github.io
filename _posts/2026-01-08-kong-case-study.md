@@ -95,10 +95,6 @@ When Kong launched Event Gateway, a new product, the doc tests were ready from d
 
 Perhaps the most striking validation came from Kong's engineering teams. Doc tests that simulate real user workflows often catch issues that traditional unit and integration tests miss.
 
-*"Engineers that I've talked to said, 'Our synthetic tests aren't as good as what you guys have with automated tests.' They want our tests in their product suite because ours are better."*
-
-— Diana Breza
-
 This makes sense when you consider what doc tests actually validate. While engineering tests verify that individual pieces of functionality work correctly, doc tests verify that end-to-end user workflows succeed, which is ultimately what matters for user experience.
 
 ## The Writers' Experience
