@@ -23,7 +23,7 @@ The result is a test suite that behaves exactly like hand-written tests (determi
 
 ## How it works in practice
 
-[Doc Detective's agent tools](https://github.com/doc-detective/agent-tools) implement this pattern as a set of [agent skills](https://instructionmanuel.com/writing-skills-agents-can-execute). The `doc-detective-test` skill defines a workflow that converts documentation procedures into executable test specifications:
+[Doc Detective's agent tools](https://github.com/doc-detective/agent-tools) implement this pattern as a set of [agent skills](https://instructionmanuel.com/writing-skills-agents-can-execute). The `doc-detective-test` skill defines a workflow that converts documentation procedures into executable test specifications: 
 
 1. **Parse** — Read a documentation file and identify step-by-step procedures
 2. **Generate** — Convert each procedure into a structured test specification
