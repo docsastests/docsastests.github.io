@@ -26,3 +26,133 @@ h1 {
 .author-bio {
   margin-bottom: 1em;
 }
+
+/* Book Side Panel */
+.book-side-panel {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(calc(100% - 48px));
+  z-index: 9999;
+  width: 260px;
+  background: linear-gradient(160deg, #1e3a5f, #0f1b2d);
+  border-radius: 12px 0 0 12px;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  color: white;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.book-side-panel:hover,
+.book-side-panel.is-expanded {
+  transform: translateY(-50%) translateX(0);
+}
+
+.book-panel-content {
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.book-panel-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #c9a84c;
+  background: rgba(201, 168, 76, 0.15);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.book-panel-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.book-panel-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  font-family: "Roboto Slab", sans-serif;
+}
+
+.book-panel-tagline {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.book-panel-cta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #c9a84c;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.book-panel-cta:hover {
+  color: #e0c060;
+  text-decoration: none;
+}
+
+.book-panel-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.book-panel-close:hover {
+  color: white;
+}
+
+/* Collapsed tab when dismissed */
+.book-panel-tab {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #1e3a5f, #0f1b2d);
+  border: none;
+  border-radius: 8px 0 0 8px;
+  color: white;
+  cursor: pointer;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  padding: 0;
+  font-size: 1.15rem;
+}
+
+.book-panel-tab:hover {
+  width: 44px;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide side panel on mobile */
+@media (max-width: 768px) {
+  .book-side-panel,
+  .book-panel-tab {
+    display: none;
+  }
+}

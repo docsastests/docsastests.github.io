@@ -12,6 +12,54 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
+<!-- Book Side Panel -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var STORAGE_KEY = 'dat-book-panel-dismissed';
+
+    function createTab() {
+      var tab = document.createElement('button');
+      tab.className = 'book-panel-tab';
+      tab.setAttribute('aria-label', 'Show book promotion');
+      tab.innerHTML = '&#128214;';
+      tab.addEventListener('click', function () {
+        tab.remove();
+        showPanel();
+        localStorage.removeItem(STORAGE_KEY);
+      });
+      document.body.appendChild(tab);
+    }
+
+    function showPanel() {
+      var panel = document.createElement('aside');
+      panel.className = 'book-side-panel';
+      panel.innerHTML =
+        '<button class="book-panel-close" aria-label="Dismiss book promotion">&times;</button>' +
+        '<div class="book-panel-content">' +
+          '<div class="book-panel-badge">Get the Book</div>' +
+          '<div class="book-panel-icon">&#128214;</div>' +
+          '<h3 class="book-panel-title">Docs as Tests</h3>' +
+          '<p class="book-panel-tagline">Build documentation that stays accurate, reliable, and in sync with your product.</p>' +
+          '<a href="https://amzn.to/3NEqwAV" class="book-panel-cta" target="_blank" rel="noopener">Get it on Amazon &rarr;</a>' +
+        '</div>';
+
+      panel.querySelector('.book-panel-close').addEventListener('click', function () {
+        panel.remove();
+        createTab();
+        localStorage.setItem(STORAGE_KEY, 'true');
+      });
+
+      document.body.appendChild(panel);
+    }
+
+    if (localStorage.getItem(STORAGE_KEY) === 'true') {
+      createTab();
+    } else {
+      showPanel();
+    }
+  });
+</script>
+
 <!-- RSS -->
 <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/rss.xml">
 
