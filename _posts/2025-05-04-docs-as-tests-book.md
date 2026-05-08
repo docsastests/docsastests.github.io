@@ -5,6 +5,7 @@ image:
   thumbnail: /images/docs-as-tests-book.png
 title: "Docs as Tests book is Now Available!"
 categories: docs-as-tests announcement
+permalink: /docs-as-tests-resilient-book/
 ---
 
 # Docs as Tests book is Now Available!
