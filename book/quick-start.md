@@ -5,7 +5,7 @@ permalink: /book/quick-start/
 description: "A test page for the Docs as Tests with AI book examples."
 ---
 
-*A test page for [Docs as Tests with AI]({{ site.url }}) book examples.*
+*A test page for [Docs as Tests]({{ site.url }}) book examples.*
 
 If you're reading this, you're running through the Quick Start from the book. This page exists specifically to give you something stable to test against.
 
@@ -23,7 +23,7 @@ This page contains several testable elements:
 Here's a command you might find in documentation:
 
 ```
-doc-detective runTests --input my-tests.yaml
+doc-detective --input my-tests.yaml
 ```
 
 Your tests can verify this code block exists and contains the expected text.
@@ -42,10 +42,8 @@ Once your test passes against this page, try testing your own documentation. The
 
 - Navigate to a URL with `goTo`
 - Find elements with `find`
-- Verify text content with `matchText`
+- Verify text content with `elementText`
 
-See the [full documentation](https://doc-detective.com/docs) for more actions and options.
+See the [full documentation](https://doc-detective.com) for more actions and options.
 
----
-
-*This page supports examples from* Docs as Tests with AI *by Manny Silva. [Learn more about Doc Detective](https://doc-detective.com).*
+> This page supports examples from [Docs as Tests](https://amzn.to/3NEqwAV) and [Docs as Tests & AI](https://amzn.to/4tOLOeS) by Manny Silva. [Learn more about Doc Detective](https://doc-detective.com).*
