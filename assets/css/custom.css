@@ -88,6 +88,18 @@ h1 {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.book-panel-divider {
+  width: 100%;
+  height: 1px;
+  margin: 0.85rem 0 0.25rem;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.book-panel-title--secondary {
+  font-size: 0.95rem;
+  opacity: 0.92;
+}
+
 .book-panel-cta {
   display: inline-block;
   margin-top: 0.5rem;

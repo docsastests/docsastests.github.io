@@ -2,10 +2,10 @@
 layout: page
 title: "Quick Start Example"
 permalink: /book/quick-start/
-description: "A test page for the Docs as Tests with AI book examples."
+description: "A test page for the Docs as Tests & AI book examples."
 ---
 
-*A test page for [Docs as Tests]({{ site.url }}) book examples.*
+*A test page for [Docs as Tests & AI]({{ site.url }}/docs-as-tests-book/) book examples.*
 
 If you're reading this, you're running through the Quick Start from the book. This page exists specifically to give you something stable to test against.
 

@@ -3,12 +3,12 @@ layout: post
 image:
   path: /images/docs-as-tests-and-ai-book.png
   thumbnail: /images/docs-as-tests-and-ai-book.png
-title: "Docs as Tests & AI book is Coming Soon!"
+title: "Docs as Tests & AI book is Now Available!"
 categories: docs-as-tests announcement ai
 permalink: /docs-as-tests-book/
 ---
 
-I'm thrilled to announce that my new book, "Docs as Tests & AI: A Strategy for Self-Healing Technical Documentation," is coming soon! It's the follow-up to _Docs as Tests_, written for the new reality every documentation team is navigating: AI is in the pipeline. It generates content, consumes your docs through chatbots and RAG, and executes your procedures as agents — and every error along the way amplifies to thousands of users.\
+I'm thrilled to announce that my new book, "Docs as Tests & AI: A Strategy for Self-Healing Technical Documentation," is now available! It's the follow-up to _Docs as Tests_, written for the new reality every documentation team is navigating: AI is in the pipeline. It generates content, consumes your docs through chatbots and RAG, and executes your procedures as agents — and every error along the way amplifies to thousands of users.\
 \
 [Get your copy today!](https://amzn.to/4tOLOeS)
 

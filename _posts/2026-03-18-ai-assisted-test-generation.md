@@ -17,7 +17,7 @@ That's the idea behind AI-assisted test generation: use an LLM to convert docume
 
 Note where the AI sits in the workflow. The LLM is the *author* of the test code, not the *runtime*. It reads a how-to guide, interprets the steps, and produces a structured test specification. A human reviews that spec for correctness. Then a deterministic test runner executes it—no LLM involved at runtime, no variability between runs, no API costs per execution.
 
-This is different from probabilistic testing, where an LLM evaluates docs at runtime by interpreting content and judging quality on each pass. Probabilistic approaches have their place (I'll be covering them in my next book!), but they introduce variability: the same input can produce different results across runs, and you're paying for LLM inference every time. AI-assisted test generation avoids both issues by confining the AI to a one-time generation step.
+This is different from probabilistic testing, where an LLM evaluates docs at runtime by interpreting content and judging quality on each pass. Probabilistic approaches have their place (I cover them in [_Docs as Tests & AI_](https://amzn.to/4tOLOeS)), but they introduce variability: the same input can produce different results across runs, and you're paying for LLM inference every time. AI-assisted test generation avoids both issues by confining the AI to a one-time generation step.
 
 The result is a test suite that behaves exactly like hand-written tests (deterministic, repeatable, and cheaper to run) but was created in a fraction of the time.
 
