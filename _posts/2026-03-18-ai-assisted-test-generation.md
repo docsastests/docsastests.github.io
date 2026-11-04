@@ -132,7 +132,7 @@ You don't have to inject every test. Some teams inject tests for critical proced
 Once tests are generated and reviewed—whether they live as separate spec files or as injected inline comments. They're just files in your repository, and they run the same way hand-written tests do:
 
 ```bash
-npx doc-detective --input docs/ --output .doc-detective/results/
+npx doc-detective run docs/ --output-dir test-results/
 ```
 
 In a CI pipeline, this means every pull request that changes documentation can automatically verify that the documented procedures still work. The tests are deterministic, so the same input produces the same output every time with no hard-to-forecast LLM costs per run.
