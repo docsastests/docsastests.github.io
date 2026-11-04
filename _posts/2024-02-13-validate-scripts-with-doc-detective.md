@@ -35,17 +35,12 @@ We'll do this a few ways: first, we'll test individual commands and validate the
 
 If you already have Doc Detective installed, skip to the next section.
 
-Before you can get Doc Detective running, you need the prerequisites:
+Before you can get Doc Detective running, you need Node.js 22.22 or higher. I like using [Node Version Manager](https://github.com/nvm-sh/nvm), or you can use the [official installers](https://nodejs.org/).
 
-* Node.js 18 or higher. I like using [Node Version Manager](https://github.com/nvm-sh/nvm), or you can use the [official installers](https://nodejs.org/).
-* [Git](https://git-scm.com/)
-
-Once you have those installed, you can clone Doc Detective to your machine and install dependencies:
+Once you have that installed, you can install Doc Detective:
 
 ```
-git clone https://github.com/doc-detective/doc-detective.git
-cd doc-detective
-npm install
+npm install -g doc-detective
 ```
 
 ## Validate individual commands
@@ -78,7 +73,7 @@ We can test this out with a single test that has two steps. The first step runs 
 Now, let's run the test:
 
 ```bash
-npm run runTests -- -i command-validation.spec.json
+doc-detective run command-validation.spec.json
 ```
 
 Great! We see that the first command passed and the second command failed. This is exactly what we expected because the second command exits with a non-zero exit code. But while these steps test individual commands, you'll often want to run a script to test multiple commands at once. Let's look at how to do that.
@@ -92,9 +87,7 @@ Let's look at each of the steps in the UI validation procedure and identify comm
 1. Install Doc Detective:
 
     ```bash
-    git clone https://github.com/doc-detective/doc-detective.git
-    cd doc-detective
-    npm install
+    npm install -g doc-detective
     ```
 
 2. Save the procedure as a Markdown file:
@@ -112,14 +105,14 @@ Let's look at each of the steps in the UI validation procedure and identify comm
 4. Run the test:
 
     ```bash
-    npm run runTests -- -i kitten-search.spec.json
+    doc-detective run kitten-search.spec.json --output testResults.json
     ```
 
 5. Validate the results, in this case by checking that the screenshot and test results files exist:
 
     ```bash
     FILE=search-results.png; if [ -f "$FILE" ]; then echo "File $FILE exists."; else false; fi
-    for file in testResults-*.json; do [ -e "$file" ] && echo "File $file exists." || false; break; done
+    FILE=testResults.json; if [ -f "$FILE" ]; then echo "File $FILE exists."; else false; fi
     ```
 
 If you wanted to validate each of these commands individually, you could, but that's a lot of work. Instead, let's create a `bash` script. Save the following script as _ui-validation.sh_:
@@ -128,14 +121,12 @@ If you wanted to validate each of these commands individually, you could, but th
 # ui-validation.sh
 #
 # !/bin/bash
-git clone https://github.com/doc-detective/doc-detective.git
-cd doc-detective
-npm install
+npm install -g doc-detective
 echo -e 'To search for American Shorthair kittens,\n\n1. Go to [Google](https://www.google.com).\n\n2. In the search bar, enter \"American Shorthair kittens\", then press Enter.\n\n![Search results](search-results.png)' > kitten-search.md
 echo -e '{ "tests": [ { "steps": [ { "action": "goTo", "url": "https://www.google.com" }, { "action": "find", "selector": "[title=Search]", "click": true }, { "action": "typeKeys", "keys": ["American Shorthair kittens", "$ENTER$"] }, { "action": "wait", "duration": 5000 }, { "action": "saveScreenshot", "path": "search-results.png" } ] } ]}' > kitten-search.spec.json
-npm run runTests -- -i kitten-search.spec.json
+doc-detective run kitten-search.spec.json --output testResults.json
 FILE=search-results.png; if [ -f "$FILE" ]; then echo "File $FILE exists."; else exit 1; fi
-for file in testResults-*.json; do [ -e "$file" ] && echo "File $file exists." || exit 1; break; done
+FILE=testResults.json; if [ -f "$FILE" ]; then echo "File $FILE exists."; else exit 1; fi
 ```
 
 Now, we can validate the whole procedure with a single command. Let's save this test as _ui-validation.spec.json_:
@@ -160,7 +151,7 @@ Now, we can validate the whole procedure with a single command. Let's save this 
 Now that we have our test and script, let's run it. Note that while the script is running, we won't see any output in the terminal. Please be patient.
 
 ```bash
-npm run runTests -- -i ui-validation.spec.json
+doc-detective run ui-validation.spec.json
 ```
 
 This script is a little more complex than the others, but it's a great way to validate a whole procedure in one go.
@@ -182,10 +173,9 @@ if (fs.existsSync(FILE)) {
   process.exit(1);
 }
 
-const files = fs.readdirSync(process.cwd());
-const testResults = files.filter(file => file.startsWith('testResults-'));
-if (testResults.length > 0) {
-  console.log(`File ${testResults[0]} exists.`);
+const RESULTS = 'testResults.json';
+if (fs.existsSync(RESULTS)) {
+  console.log(`File ${RESULTS} exists.`);
 } else {
   process.exit(1);
 }
@@ -213,7 +203,7 @@ We can test this just as easily as our other script. Save the following test as 
 And finally, run the test:
 
 ```bash
-npm run runTests -- -i js-validation.spec.json
+doc-detective run js-validation.spec.json
 ```
 
 Just like the `bash` script and the individual commands before it, this script exits cleanly. You're welcome to try deleting the output files and watching it fail too!

@@ -47,17 +47,12 @@ To do all of this, we'll create a Doc Detective test specification and map each 
 
 If you already have Doc Detective installed, skip to the next section.
 
-Before you can get Doc Detective running, you need the prerequisites:
+Before you can get Doc Detective running, you need Node.js 22.22 or higher. I like using [Node Version Manager](https://github.com/nvm-sh/nvm), or you can use the [official installers](https://nodejs.org/).
 
-* Node.js 18 or higher. I like using [Node Version Manager](https://github.com/nvm-sh/nvm), or you can use the [official installers](https://nodejs.org/).
-* [Git](https://git-scm.com/)
-
-Once you have those installed, you can clone Doc Detective to your machine and install dependencies:
+Once you have that installed, you can install Doc Detective:
 
 ```bash
-git clone https://github.com/doc-detective/doc-detective.git
-cd doc-detective
-npm install
+npm install -g doc-detective
 ```
 
 Doc Detective automatically downloads portable versions of Chrome and Firefox to your machine to use in testing. By default, Doc Detective runs tests against Chrome, but you can specify one or more contexts (browsers) to run your tests against if you so choose. For today, we'll stick with Chrome.
@@ -152,10 +147,10 @@ Now let's run the test!
 Running the test is thankfully simple. Back in your terminal, run the following command, where `<input_path>` is the path to the JSON or Markdown file you wrote your tests in.
 
 ```bash
-npm run runTests -- -i <input_path>
+doc-detective run <input_path>
 ```
 
-Doc Detective spins up a headless browser (meaning you won't see a window), and performs the test. You'll see a JSON report in your terminal when it's done, as well as the report in a new JSON file starting with _testResults-_.
+Doc Detective spins up a headless browser (meaning you won't see a window), and performs the test. You'll see a summary in your terminal when it's done, and the full results in a new run folder under _.doc-detective/runs/_, including _testResults.json_ and an HTML report.
 
 If a step in your test failed, you'd see a failure message in the step's `resultDescription` field. This is a great way to debug your test runs and figure out what went wrong, which is the first step toward updating your docs or fixing your product.
 

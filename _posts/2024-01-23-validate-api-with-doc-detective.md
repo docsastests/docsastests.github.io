@@ -24,12 +24,10 @@ This tutorial also assumes you have the current LTS version of Node JS installed
 
 ## Install Doc Detective
 
-Install Doc Detective by cloning it onto your machine using Git, navigating into the folder, and using `npm install`.
+Install Doc Detective with npm.
 
 ```bash
-git clone https://github.com/doc-detective/doc-detective.git
-cd doc-detective
-npm install
+npm install -g doc-detective
 ```
 
 ## How to think about Docs as Tests
@@ -48,13 +46,7 @@ For the simple REST API tests in this tutorial, we’re going to focus on differ
 
 ## Writing your first Doc Detective test
 
-Create a folder named *test-specs* next to the cloned repository of Doc Detective.
-
-```
-|
-+- doc-detective
-+- test-specs
-```
+Create a folder named *test-specs*, and open a terminal in it.
 
 In the test-specs folder, create a file called *rest-test.spec.json*. This file is going to be the spec for Doc Detective to run. All the spec object needs to run is a set of tests, but it’s a good practice to give it an `id` and `description` for book keeping.
 
@@ -91,10 +83,10 @@ Let’s start off with the absolute basics and add a test that calls the api for
 
 On its own, just checking to see if a URL returns a response is already a powerful tool for making sure docs remain accurate, especially for simple `GET` endpoints.
 
-Now save the JSON, return to your terminal that is currently running in the *doc-detective* directory, and execute the following command:
+Now save the JSON, return to your terminal that is currently running in the *test-specs* directory, and execute the following command:
 
 ```bash
-npm run runTests -- --input ../test-specs/rest-test.spec.json
+doc-detective run rest-test.spec.json
 ```
 
 Doc Detective should return confirmation that your test passes after taking a moment to execute the test.
@@ -130,10 +122,10 @@ Testing how endpoints respond to `GET` can only take you so far. The vast majori
 
 Notice that we’ve added a `statusCodes` object with `200` and `201` as possible response codes. `200` is a very common success code for most calls to an API and is the default code Doc Detective tests. The `POST /users` endpoint of [reqres](http://reqres.in) returns a `201` on the successful creation of a new user and we need to call that out as an acceptable response code otherwise our test will be marked as a failure.
 
-Save the JSON, return to your terminal that is currently running in the *doc-detective* directory, and execute the following command:
+Save the JSON, return to your terminal that is currently running in the *test-specs* directory, and execute the following command:
 
 ```bash
-npm run runTests -- --input ../test-specs/rest-test.spec.json
+doc-detective run rest-test.spec.json
 ```
 
 Doc Detective should return confirmation that your test passes after taking a moment to execute the tests.
@@ -172,10 +164,10 @@ While confirming that an API works and returns a certain status code can be help
 
 Now, when you run this test, it will throw an error if the API does not return `name` field matching the value you provided.
 
-Save the JSON, return to your terminal that is currently running in the *doc-detective* directory, and execute the following command:
+Save the JSON, return to your terminal that is currently running in the *test-specs* directory, and execute the following command:
 
 ```bash
-npm run runTests -- --input ../test-specs/rest-test.spec.json
+doc-detective run rest-test.spec.json
 ```
 
 Doc Detective should return confirmation that your test passes after taking a moment to execute the tests.
@@ -278,7 +270,7 @@ Take note of the following traits of inline tests.
 Copy the Markdown with inline tests, paste it into a new *rest-test.md* file in the *test-specs* folder, and then run the following in the command line:
 
 ```bash
-npm run runTests -- --input ../test-specs/rest-test.md
+doc-detective run rest-test.md
 ```
 
 Doc Detective should return confirmation that your test passes after taking a moment to execute the tests.
@@ -336,7 +328,7 @@ In this example, there’s a step with a `setVariables` action. This will look a
 Run the following in the command line:
 
 ```bash
-npm run runTests -- --input ../test-specs/env-variable-tests.spec.json
+doc-detective run env-variable-tests.spec.json
 ```
 
 Doc Detective should return confirmation that your test passes after taking a moment to execute the tests. Since the tests pass, you can be sure that the tests used the `USER` and `JOB` variables from the .env file.
@@ -402,7 +394,7 @@ This code has the `envsFromResponseData` which sets a new `ID` environment varia
 Run the following in the command line to confirm that the test works as expected:
 
 ```bash
-npm run runTests -- --input ../test-specs/env-variable-tests.spec.json
+doc-detective run env-variable-tests.spec.json
 ```
 
 Doc Detective should return confirmation that your test passes after taking a moment to execute the tests.
